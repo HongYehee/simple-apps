@@ -5,7 +5,7 @@ import UIKit
 
 final class ViewController: UIViewController {
     
-    // 이메일 입력하는 텍스트 뷰
+    // MARK: - 이메일 입력하는 텍스트 뷰
     private lazy var emailTextFieldView: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
@@ -41,7 +41,7 @@ final class ViewController: UIViewController {
     }()
     
     
-    // 비밀번호 입력하는 텍스트 뷰
+    // MARK: - 비밀번호 입력하는 텍스트 뷰
     private lazy var passwordTextFieldView: UIView = {
         let view = UIView()
         //view.frame.size.height = 48
@@ -90,7 +90,7 @@ final class ViewController: UIViewController {
         return button
     }()
     
-    // 로그인버튼
+    // MARK: - 로그인버튼
     private lazy var loginButton: UIButton = {
         let button = UIButton(type: .custom)
         button.backgroundColor = .clear
@@ -132,6 +132,7 @@ final class ViewController: UIViewController {
     lazy var emailInfoLabelCenterYConstraint = emailInfoLabel.centerYAnchor.constraint(equalTo: emailTextFieldView.centerYAnchor)
     lazy var passwordInfoLabelCenterYConstraint = passwordInfoLabel.centerYAnchor.constraint(equalTo: passwordTextFieldView.centerYAnchor)
     
+    // MARK: - 뷰디드로드
     override func viewDidLoad() {
         super.viewDidLoad()
         print()
@@ -235,7 +236,9 @@ final class ViewController: UIViewController {
 
 }
 
+// MARK: - 확장
 extension ViewController: UITextFieldDelegate {
+    
     // 텍스트필드 편집 시작할때의 설정 - 문구가 위로올라가면서 크기 작아지고, 오토레이아웃 업데이트
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
